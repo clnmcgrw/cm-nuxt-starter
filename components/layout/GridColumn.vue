@@ -56,8 +56,8 @@ export default {
 }
 </script>
 
-<style lang="scss">
 
+<style lang="scss">
 .gridcol {
   width: 100%;
   float: none;

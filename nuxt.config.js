@@ -1,5 +1,3 @@
-
-
 module.exports = {
   //page head
   head: {
@@ -10,7 +8,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Nuxt.js starter template' }
     ],
     link: [
-      { rel: 'stylesheet', href: '//fonts.googleapis.com/css?family=M+PLUS+1p:100,300,700,800'},
+      { rel: 'stylesheet', href: '//fonts.googleapis.com/css?family=Quicksand:300,400,500,700'},
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script: [

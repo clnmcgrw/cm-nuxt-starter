@@ -35,13 +35,15 @@ html {
 }
 body {
   font-family: $body-font-family;
+  color: $body-font-color;
   font-weight:300;
 }
 
 
 #{headings()} {
-  line-height: 1;
-  font-weight:700;
+  line-height: $heading-line-height;
+  font-weight: $heading-font-weight;
+  color: $heading-font-color;
 }
 
 a {
@@ -70,7 +72,6 @@ a {
   html {
     font-size: $base-font-size;
   }
-
 
 }
 
