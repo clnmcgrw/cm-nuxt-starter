@@ -1,0 +1,22 @@
+{
+  "name": "cm-nuxt-starter",
+  "version": "0.0.1",
+  "description": "A Nuxt.js starter template for fancy-schmancy brochure sites not app ui's.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "nuxt": "^1.0.0",
+    "nuxt-sass-resources-loader": "^2.0.4"
+  },
+  "devDependencies": {
+    "node-sass": "^4.9.3",
+    "sass-loader": "^7.1.0"
+  },
+  "author": "Colin McGraw",
+  "license": "ISC"
+}
