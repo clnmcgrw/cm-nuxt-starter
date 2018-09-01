@@ -26,7 +26,7 @@ export default {
 .headline-sm--el {
   font-size: 0.9;
   text-transform: uppercase;
-  font-weight: 300;
+  font-weight: 500;
   letter-spacing: 0.1em;
   color: $gray;
   margin-bottom: 1.5em;

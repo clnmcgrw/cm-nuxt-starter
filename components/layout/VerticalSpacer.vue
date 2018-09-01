@@ -1,5 +1,5 @@
 <template>
-  <div :class='getElementClassnames()' :style='{"height": size}'>
+  <div :class='getElementClassnames()' :style='{"height": height}'>
     <slot></slot>
   </div>
 </template>
@@ -8,19 +8,21 @@
 export default {
   name: 'vertical-spacer',
   props: {
-    size: {
+    height: {
       type: String,
       default: '2em'
     },
     hideAt: {
       type: String,
-      default: 'lg'
+      default: 'none'
     }
   },
   methods: {
     getElementClassnames() {
       const cssClasses = {'v--spacer':true};
-      cssClasses[`hidden--${this.hideAt}`] = true;
+      if (this.hideAt !== 'none') {
+        cssClasses[`hidden--${this.hideAt}`] = true;
+      }
       return cssClasses;
     }
   }
@@ -30,5 +32,9 @@ export default {
 <style lang="scss">
 // inline styles control height of spacers 
 
+.v--spacer {
+  display: block;
+  position: relative;
+}
 
 </style>

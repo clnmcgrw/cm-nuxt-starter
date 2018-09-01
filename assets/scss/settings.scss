@@ -8,18 +8,19 @@ $black:  #1a1a1a;
 $dark: $black;
 
 $primary: #eb3802;
+$secondary: blue;
 
 
 
 //-- TYPOGRAPHY -----------------------------------------//
 
-$body-font-family: 'M PLUS 1p', sans-serif;
-$heading-font-family: 'M PLUS 1p', sans-serif;
-$accent-font-family: 'M PLUS 1p', serif;
+$body-font-family: 'Nunito Sans', sans-serif;
+$heading-font-family: 'Nunito Sans', sans-serif;
+$accent-font-family: 'Nunito Sans', sans-serif;
 
 $base-font-size: 1.333vw;
-$base-font-size-sm: 16px;
-$base-font-size-xs: 14px;
+$base-font-size-sm: 14px;
+$base-font-size-xs: 12px;
 
 $body-line-height: 1.7;
 $heading-line-height: 1.1;
@@ -27,7 +28,7 @@ $heading-line-height: 1.1;
 $body-font-color: $gray;
 $heading-font-color: $dark;
 
-$body-font-weight: 300;
+$body-font-weight: 200;
 $heading-font-weight: 800;
 
 
@@ -35,6 +36,8 @@ $heading-font-weight: 800;
 //-- GRID ----------------------------------------------//
 
 $total_grid_columns: 32;
+$site_min_width: 290px;
+$site_max_width: 'none';
 
 $grid-breakpoints: (
   xs: "460px", 
@@ -83,10 +86,16 @@ $ease-in-out-circ: cubic-bezier(0.785,  0.135, 0.150, 0.860);
 $ease-in-out-back: cubic-bezier(0.680, -0.550, 0.265, 1.550);
 
 
+
 //-- FUNCTIONS/MIXINS ----------------------------------------------//
 
 @function headings() {
   @return h1,h2,h3,h4,h5,h6;
+}
+
+@function textinputs() {
+  @return 'input[type="text"], input[type="tel"],
+  input[type="number"], input[type="email"], textarea';
 }
 
 @mixin sr-only() {
@@ -109,6 +118,16 @@ $ease-in-out-back: cubic-bezier(0.680, -0.550, 0.265, 1.550);
   }
   display: block; position:absolute;
   top:0; left:0; width:100%; height:100%;
+}
+
+@mixin fluid-element($height:1, $width:1, $childSelector:false) {
+  position:relative; overflow:hidden;
+  padding-bottom: ($height/$width) * 100%;
+  @if $childSelector {
+    #{$childSelector} { 
+      @include fill-parent();
+    }
+  }
 }
 
 @mixin clearfix() {

@@ -24,7 +24,8 @@ export default {
 <style lang="scss">
 
 .headline-lg--el {
-  font-size: 3em;
+  font-size: 3.3em;
+  margin-bottom: 0.5em;
 }
 
 .headline-lg--text {

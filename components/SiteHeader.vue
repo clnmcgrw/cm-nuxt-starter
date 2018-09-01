@@ -1,6 +1,6 @@
 <template>
   
-  <header class="site-header" role="banner">
+  <header id="site-header" class="site-header" role="banner">
     <div class="grid-row">
       
       <div class="site-header--brand">
@@ -33,9 +33,9 @@ export default {
   data() {
     return {
       nav: [
-        {to:'/', text:'Home'}, 
-        {to:'/blog', text:'Blog'}, 
-        {to:'/about', text:'About'}
+        {to:'/about', text:'About'},
+        {to:'/components', text:'Components'}, 
+        {to:'/blog', text:'Blog'}
       ]
     };
   },
@@ -43,6 +43,8 @@ export default {
   methods: {}
 };
 </script>
+
+
 
 <style lang="scss">
 
@@ -61,20 +63,36 @@ export default {
   a {
     display: inline-block;
     padding: 0.5em;
+    background-color: $white;
     border: 2px solid darken($white, 8%);
   }
 }
 
 .site-header--nav {
+  padding-top: 0.5em;
   ul {
     list-style: none;
     padding: 0;
   }
   > ul > li {
     display: inline-block;
+    margin-right: 1em;
+    &:last-child {
+      margin-right: 0;
+    }
   }
   li a {
     display: block;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.85em;
+    color: $gray;
+    transition: color .5s ease;
+
+    &:hover {
+      color: $dark;
+    }
   }
 }
 

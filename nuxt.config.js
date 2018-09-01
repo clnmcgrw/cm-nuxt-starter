@@ -8,12 +8,12 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Nuxt.js starter template' }
     ],
     link: [
-      { rel: 'stylesheet', href: '//fonts.googleapis.com/css?family=Quicksand:300,400,500,700'},
+      { rel: 'stylesheet', href: '//fonts.googleapis.com/css?family=Nunito+Sans:200,200i,400,400i,700,800'},
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script: [
       { src: '//cdn.polyfill.io/v2/polyfill.min.js' },
-      { src: '//cdn.jsdelivr.net/combine/npm/flickity@2.0.10/dist/flickity.pkgd.min.js,npm/animejs@2.2.0' }
+      { src: '//cdn.jsdelivr.net/combine/npm/flickity@2.0.10/dist/flickity.pkgd.min.js,npm/animejs@2.2.0,npm/jquery@2.2.4' }
     ]
   },
   
@@ -22,7 +22,7 @@ module.exports = {
 
   //router config
   router: {
-    //middleware: 'pages'
+    middleware: 'pages'
   },
 
   // nuxt extensions

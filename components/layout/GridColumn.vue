@@ -1,6 +1,6 @@
 <template>
   
-  <div :class='getClassnameObject()'>
+  <div :class='["gridcol", "gridcol--span-"+span, "gridcol--offset-"+offset, "gridcol--bp-"+bp]'>
     <slot></slot>
   </div>
 
@@ -15,7 +15,7 @@ export default {
   props: {
     span: {
       type: Number,
-      default: 16
+      default: 14
     },
     offset: {
       type: Number,
@@ -35,23 +35,6 @@ export default {
     return {
       totalColumns: 32
     };
-  },
-
-  methods: {
-    getClassnameObject() {
-      const cssClasses = {};
-      this.extraClasses.forEach(classname => cssClasses[classname] = true);
-      for (let i=0; i < this.totalColumns; i++) {
-        if (this.span === i) {
-          cssClasses[`gridcol--span-${this.span}`] = true;
-        }
-        if (this.offset === i && i > 0) {
-          cssClasses[`gridcol--offset-${this.offset}`] = true;
-        }
-        cssClasses[`gridcol--bp-${this.bp}`] = true;
-      }
-      return cssClasses;
-    }
   }
 }
 </script>

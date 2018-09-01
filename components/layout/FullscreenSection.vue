@@ -1,6 +1,6 @@
 <template>
   
-  <section class="section-fullscreen" :style='{"min-height":minHeight+"px"}'>
+  <section class="section-fullscreen" :style='{"min-height":contentHeight+"px"}'>
     <div class="section-centered">
       <div class="grid-row">
         <slot></slot>
@@ -22,8 +22,20 @@ export default {
     }
   },
 
-  methods: {}
-}
+  data() {
+    return {
+      contentHeight: this.minHeight
+    };
+  },
+
+  methods: {
+
+  },
+
+  mounted() {
+    this.contentHeight = $(this.$el).find('.section-centered').height();
+  }
+};
 </script>
 
 
