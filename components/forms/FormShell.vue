@@ -1,12 +1,12 @@
 <template>
 
-<div class="form-default">
-  
-  <form action="" method="">
-    <slot></slot>
-  </form>
-
-</div>  
+  <div :class='["form-shell", "form-"+formType]'>
+    <form :action="action" :method="method">
+      <div class="form-shell--liner">
+        <slot></slot>
+      </div>
+    </form>
+  </div>  
 
 </template>
 
@@ -14,8 +14,22 @@
 <script>
 
 export default {
-
-}
+  name: 'form-shell',
+  props: {
+    action: {
+      type: String,
+      default: ''
+    },
+    method: {
+      type: String,
+      default: 'POST'
+    },
+    formType: {
+      type: String,
+      default: 'default'
+    }
+  }
+};
 </script>
 
 
@@ -32,6 +46,11 @@ input[type="text"], input[type="search"], textarea, select {
   font-size: 1em;
   background-color: $white;
   transition: all .5s ease;
+  font-family: $body-font-family;
+
+  &::placeholder {
+    color: darken($white, 7%);
+  }
 
   .is-focused & {
     border-color: darken($white, 15%);
@@ -40,11 +59,12 @@ input[type="text"], input[type="search"], textarea, select {
 }
 
 input[type="text"], input[type="search"], textarea {
-  padding: 1em;
+  padding: 0.8em;
 }
 
 select {
-  height: 2.5em;
+  height: 2.85em;
+  padding-left: 1em;
 }
 
 textarea {

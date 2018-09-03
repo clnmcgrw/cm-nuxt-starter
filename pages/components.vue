@@ -4,7 +4,7 @@
 
     <grid-column :span="16">
 
-      <form-shell>
+      <form-shell method="POST">
         <form-field v-for="(field, i) in demoForm.fields" :field="field" :key="i" />
       </form-shell>
       
