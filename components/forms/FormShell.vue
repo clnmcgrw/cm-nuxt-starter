@@ -39,7 +39,7 @@ export default {
 input[type="text"], input[type="search"], textarea, select {
   display: block;
   width: 100%;
-  outline: none;
+  outline: none; appearance:none;
   box-shadow: none;
   border-radius: 0px;
   border: 1px solid darken($white, 12%);
@@ -68,6 +68,7 @@ select {
 }
 
 textarea {
+  min-height: 4em;
   resize: vertical;
 }
 

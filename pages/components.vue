@@ -37,7 +37,8 @@ export default {
         fields: [
           {fieldType: "text", label: "First Name", name: "first_name", placeholder: "First Name"},
           {fieldType: "textarea", label: "Enter Your Message", name: "message"},
-          {fieldType: "select", label: "Select Your Industry", name: "industry", options: ['one', 'two', 'three'] }
+          {fieldType: "select", label: "Select Your Industry", name: "industry", options: ['one', 'two', 'three'], placeholder: "Chose One..." },
+          {fieldType: "checkbox", label: "Check All That Apply", name: "symptoms", options: [{label:"First One", "value": 1}]}
         ]
       }
     };

@@ -9,7 +9,7 @@
 
       <div class="form-input--el">
       
-        <input v-if="isTextInput" :id='"form-input-control--"+field.name' :type="field.fieldType" :name="field.name" :placeholder="field.placeholder" @focus="onFieldFocus" @blur="onFieldBlur">
+        <input v-if="isTextInput" :id='"form-input-control--"+field.name' :type="field.fieldType" :name="field.name" :placeholder="field.placeholder" @focus="onFieldFocus" @blur="onFieldBlur" @change="onFieldChange">
 
         <textarea v-if="field.fieldType === 'textarea'" :id='"form-input-control--"+field.name' :name="field.name" :placeholder="field.placeholder" @focus="onFieldFocus" @blur="onFieldBlur"></textarea>
 
@@ -66,7 +66,8 @@ export default {
           fieldType: 'text',
           label: 'Label Text',
           name: 'default_name',
-          placeholder: 'Placeholder Text'
+          placeholder: 'Placeholder Text',
+          onChange: () => {}
         };
       }
     }
@@ -85,8 +86,11 @@ export default {
       return this.field.placeholder ? this.field.placeholder : '';
     },
     isTextInput() {
-      return /(text|tel|search|number|password)/.test(this.field.fieldType);
+      return /^(text|tel|search|number|password)$/.test(this.field.fieldType);
     },
+    isInputList() {
+      return /^(checkbox|radio)$/.test(this.field.fieldType);
+    }
   },
 
   methods: {
@@ -95,6 +99,9 @@ export default {
     },
     onFieldBlur() {
       this.focused = false;
+    },
+    onFieldChange(e) {
+      console.log(e);
     }
   }
 };
